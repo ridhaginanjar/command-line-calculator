@@ -13,15 +13,15 @@ maintainability.
 4. Implementing Uni Testing with Pytest
 
 ## Structure of Folder
-
+````
 my_calculator/
 ├── src/
-│ ├── calculator/
-│ │ ├── __init__.py
-│ │ ├── arithmetic.py
-│ │ └── advanced.py
-├── tests/
-│ ├── test_arithmetic.py
-│ └── test_advanced.py
-├── setup.py
-└── requirements.txt
+│   ├── calculator/           # The main calculator package
+│   │   ├── __init__.py       # Marks this directory as a Python package
+│   │   ├── arithmetic.py     # Module for basic arithmetic operations (e.g., add, subtract)
+│   │   └── advanced.py       # Module for advanced operations (e.g., trigonometry, exponentiation)
+├── tests/                    # Directory for your test files
+│   ├── test_arithmetic.py    # Unit tests for arithmetic.py
+│   └── test_advanced.py      # Unit tests for advanced.py
+├── setup.py                  # Script for installing the package, dependencies, and entry points
+└── requirements.txt          # List of dependencies for the project
