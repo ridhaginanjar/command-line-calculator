@@ -14,7 +14,7 @@ maintainability.
 
 ## Structure of Folder
 ````
-my_calculator/
+command-line-calculator/
 ├── src/
 │   ├── calculator/           # The main calculator package
 │   │   ├── __init__.py       # Marks this directory as a Python package
