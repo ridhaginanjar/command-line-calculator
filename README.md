@@ -15,7 +15,7 @@ maintainability.
 ## Structure of Folder
 ````
 command-line-calculator/
-|   calculator/           # The main calculator package
+├── calculator/           # The main calculator package
 │   ├── __init__.py       # Marks this directory as a Python package
 │   ├── arithmetic.py     # Module for basic arithmetic operations (e.g., add, subtract)
 ├── tests/                    # Directory for your test files
