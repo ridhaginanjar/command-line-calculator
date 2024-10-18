@@ -31,9 +31,7 @@ def main():
             operation_name, function_name = operations[choice]
             result = function_name(numbers)
             print(f"Hasil: {result}")
-
-            break
-        except ValueError as e:
+        except ValueError:
             print("Terjadi kesalahan! Pastikan Anda memasukan angka dengan spasi sebagai pemisahnya")
         except Exception as e:
             print(f"Terjadi kesalahan {e}")
