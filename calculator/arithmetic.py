@@ -1,5 +1,5 @@
 def get_numbers():
-    numbers = input("Masukan angka dengan spasi sebagai pemisahnya (gunakan titik '.' sebagai koma): ")
+    numbers = input("Masukan angka dengan spasi sebagai pemisahnya (gunakan titik '.' jika ingin menggunakan decimal): ")
     return [float(numbers) for numbers in numbers.split()]
 
 def addition(numbers):
