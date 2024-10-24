@@ -1,4 +1,4 @@
-from calculator.arithmetic import get_numbers
+from calculator.arithmetic import get_numbers, addition
 from unittest import TestCase
 from unittest.mock import patch
 
@@ -26,3 +26,9 @@ class TestArithmetic(TestCase):
         self.assertEqual(str(context.exception), "Masukan angka dengan spasi sebagai pemisah dan gunakan '.' "
                                                  "ketika menggunakan decimal.")
 
+    def test_addition(self):
+        numbers = [6, 12]
+        result = addition(numbers)
+        expected = 18
+
+        self.assertEqual(result, expected)
