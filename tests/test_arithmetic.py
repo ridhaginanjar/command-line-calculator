@@ -1,4 +1,4 @@
-from calculator.arithmetic import get_numbers, addition
+from calculator.arithmetic import get_numbers, addition, subtraction
 from unittest import TestCase
 from unittest.mock import patch
 
@@ -41,5 +41,11 @@ class TestArithmetic(TestCase):
     def test_addition_mix_number(self):
         numbers = [6, -12]
         result = addition(numbers)
+        expected = -6
+        self.assertEqual(result, expected)
+
+    def test_subtraction_positive_number(self):
+        numbers = [6, 12]
+        result = subtraction(numbers)
         expected = -6
         self.assertEqual(result, expected)
