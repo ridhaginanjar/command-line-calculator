@@ -31,6 +31,12 @@ class TestArithmetic(TestCase):
         self.assertEqual(str(context.exception), "Masukan angka dengan spasi sebagai pemisah dan gunakan '.' "
                                                  "ketika menggunakan decimal.")
 
+    @patch('builtins.input', return_value='6')
+    def test_get_numbers_with_one_number(self, mock_input):
+        with self.assertRaises(ValueError) as context:
+            get_numbers()
+        self.assertEqual(str(context.exception),"Harap masukan Angka lebih dari satu!")
+
     def test_addition_positive_number(self):
         result = addition(self.positive_numbers)
         expected = 18
