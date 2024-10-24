@@ -85,3 +85,9 @@ class TestArithmetic(TestCase):
         result = division(numbers)
         expected = 6
         self.assertEqual(result, expected)
+
+    def test_division_negative_number(self):
+        numbers = [-12, 2]
+        result = division(numbers)
+        expected = -6
+        self.assertEqual(result, expected)
