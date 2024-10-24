@@ -29,12 +29,16 @@ def main():
             operation_name, function_name = operations[choice]
             result = function_name(numbers)
             print(f"Hasil: {result}")
+            break
         except ValueError as ve:
             print(f"Terjadi kesalahan ValueError: {ve}")
+            break
         except ZeroDivisionError as ze:
             print(f"Terjadi kesalahan ZeroDivisionError: {ze}")
+            break
         except Exception as e:
             print(f"Terjadi kesalahan {e}")
+            break
 
 
 if __name__ == "__main__":
