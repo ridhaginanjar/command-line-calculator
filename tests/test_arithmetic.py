@@ -97,3 +97,7 @@ class TestArithmetic(TestCase):
         result = division(numbers)
         expected = -6
         self.assertEqual(result, expected)
+
+    def test_division_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError) as context:
+            result = division([1, 0])

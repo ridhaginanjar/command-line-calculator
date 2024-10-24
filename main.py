@@ -32,6 +32,8 @@ def main():
             print(f"Hasil: {result}")
         except ValueError as ve:
             print(f"Terjadi kesalahan ValueError: {ve}")
+        except ZeroDivisionError as ze:
+            print(f"Terjadi kesalahan ZeroDivisionError: {ze}")
         except Exception as e:
             print(f"Terjadi kesalahan {e}")
 
