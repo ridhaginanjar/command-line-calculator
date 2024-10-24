@@ -4,6 +4,11 @@ from unittest.mock import patch
 
 
 class TestArithmetic(TestCase):
+    def setUp(self):
+        self.positive_numbers = [6, 12]
+        self.negative_numbers = [-6, -12]
+        self.mix_numbers = [-6, 12]
+
     @patch('builtins.input', return_value='6 12 3')
     def test_get_numbers(self, mock_input):
         result = get_numbers()
@@ -27,75 +32,63 @@ class TestArithmetic(TestCase):
                                                  "ketika menggunakan decimal.")
 
     def test_addition_positive_number(self):
-        numbers = [6, 12]
-        result = addition(numbers)
+        result = addition(self.positive_numbers)
         expected = 18
         self.assertEqual(result, expected)
 
     def test_addition_negative_number(self):
-        numbers = [-6, -12]
-        result = addition(numbers)
+        result = addition(self.negative_numbers)
         expected = -18
         self.assertEqual(result, expected)
 
     def test_addition_mix_number(self):
-        numbers = [6, -12]
-        result = addition(numbers)
-        expected = -6
+        result = addition(self.mix_numbers)
+        expected = 6
         self.assertEqual(result, expected)
 
     def test_subtraction_positive_number(self):
-        numbers = [6, 12]
-        result = subtraction(numbers)
+        result = subtraction(self.positive_numbers)
         expected = -6
         self.assertEqual(result, expected)
 
     def test_subtraction_negative_number(self):
-        numbers = [-6, -12]
-        result = subtraction(numbers)
+        result = subtraction(self.negative_numbers)
         expected = 6
         self.assertEqual(result, expected)
 
     def test_subtraction_mix_number(self):
-        numbers = [6, -12]
-        result = subtraction(numbers)
-        expected = 18
+        result = subtraction(self.mix_numbers)
+        expected = -18
         self.assertEqual(result, expected)
 
     def test_multiplication_positive_number(self):
-        numbers = [10, 12]
-        result = multiplication(numbers)
-        expected = 120
+        result = multiplication(self.positive_numbers)
+        expected = 72
         self.assertEqual(result, expected)
 
     def test_multiplication_negative_number(self):
-        numbers = [-10, -12]
-        result = multiplication(numbers)
-        expected = 120
+        result = multiplication(self.negative_numbers)
+        expected = 72
         self.assertEqual(result, expected)
 
     def test_multiplication_mix_number(self):
-        numbers = [10, -12]
-        result = multiplication(numbers)
-        expected = -120
+        result = multiplication(self.mix_numbers)
+        expected = -72
         self.assertEqual(result, expected)
 
     def test_division_positive_number(self):
-        numbers = [12, 2]
-        result = division(numbers)
-        expected = 6
+        result = division(self.positive_numbers)
+        expected = 0.5
         self.assertEqual(result, expected)
 
     def test_division_negative_number(self):
-        numbers = [-12, -2]
-        result = division(numbers)
-        expected = 6
+        result = division(self.negative_numbers)
+        expected = 0.5
         self.assertEqual(result, expected)
 
     def test_division_mix_number(self):
-        numbers = [-12, 2]
-        result = division(numbers)
-        expected = -6
+        result = division(self.mix_numbers)
+        expected = -0.5
         self.assertEqual(result, expected)
 
     def test_division_divide_by_zero(self):
