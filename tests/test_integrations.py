@@ -15,3 +15,11 @@ class TestIntegrations(TestCase):
         with mock.patch('builtins.print') as mock_print:
             main()
             mock_print.assert_called_with('Hasil: 4.1')
+
+    @patch('builtins.input', return_value='2,2')  # value
+    @patch('main.input', return_value='1')  # operations
+    def test_value_error(self, mock_input_ops, mock_value):
+        with mock.patch('builtins.print') as mock_print:
+            main()
+            mock_print.assert_called_with("Terjadi kesalahan ValueError: Masukan angka dengan spasi sebagai pemisah "
+                                          "dan gunakan '.' ketika menggunakan decimal.")
