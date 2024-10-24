@@ -26,9 +26,20 @@ class TestArithmetic(TestCase):
         self.assertEqual(str(context.exception), "Masukan angka dengan spasi sebagai pemisah dan gunakan '.' "
                                                  "ketika menggunakan decimal.")
 
-    def test_addition(self):
+    def test_addition_positive_number(self):
         numbers = [6, 12]
         result = addition(numbers)
         expected = 18
+        self.assertEqual(result, expected)
 
+    def test_addition_negative_number(self):
+        numbers = [-6, -12]
+        result = addition(numbers)
+        expected = -18
+        self.assertEqual(result, expected)
+
+    def test_addition_mix_number(self):
+        numbers = [6, -12]
+        result = addition(numbers)
+        expected = -6
         self.assertEqual(result, expected)
