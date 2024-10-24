@@ -21,8 +21,7 @@ def main():
         print("Masukan selain angka di atas jika ingin keluar program!")
         choice = input("PILIH OPERASI => Masukan Pilihan Anda: ")
         if choice not in operations.keys():
-            print("Keluar Program!")
-            break
+            sys.exit("Keluar Program!")
 
         try:
             numbers = get_numbers()
