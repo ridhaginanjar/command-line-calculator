@@ -67,3 +67,9 @@ class TestArithmetic(TestCase):
         result = multiplication(numbers)
         expected = 120
         self.assertEqual(result, expected)
+
+    def test_multiplication_negative_number(self):
+        numbers = [-10, -12]
+        result = multiplication(numbers)
+        expected = 120
+        self.assertEqual(result, expected)
