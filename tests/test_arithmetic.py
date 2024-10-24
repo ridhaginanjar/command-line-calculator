@@ -16,9 +16,13 @@ class TestArithmetic(TestCase):
         with self.assertRaises(ValueError) as context:
             get_numbers()
         self.assertEqual(str(context.exception), "Masukan angka dengan spasi sebagai pemisah dan gunakan '.' "
-                                                 "ketika menggunakan decimal")
+                                                 "ketika menggunakan decimal.")
 
     # dan "." bukan sebagai decimal.
-
-
+    @patch('builtins.input', return_value='6,1 3')
+    def test_get_numbers_not_use_dot_as_decimal(self, mock_input):
+        with self.assertRaises(ValueError) as context:
+            get_numbers()
+        self.assertEqual(str(context.exception), "Masukan angka dengan spasi sebagai pemisah dan gunakan '.' "
+                                                 "ketika menggunakan decimal.")
 
