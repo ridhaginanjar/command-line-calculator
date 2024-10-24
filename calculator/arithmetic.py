@@ -42,6 +42,6 @@ def division(numbers):
         for number in numbers[1:]:
             result /= number
     except ZeroDivisionError:
-        raise ZeroDivisionError("Anda tidak bisa membagi bilangan dengan angka 0.")
+        raise ZeroDivisionError("Anda tidak bisa membagi bilangan dengan angka 0!")
 
     return round(result, 2)

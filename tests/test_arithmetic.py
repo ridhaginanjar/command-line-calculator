@@ -100,4 +100,6 @@ class TestArithmetic(TestCase):
 
     def test_division_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError) as context:
-            result = division([1, 0])
+            numbers = [12, 0]
+            division(numbers)
+        self.assertEqual(str(context.exception), "Anda tidak bisa membagi bilangan dengan angka 0!")
