@@ -79,3 +79,9 @@ class TestArithmetic(TestCase):
         result = multiplication(numbers)
         expected = -120
         self.assertEqual(result, expected)
+
+    def test_division_positive_number(self):
+        numbers = [12, 2]
+        result = division(numbers)
+        expected = 6
+        self.assertEqual(result, expected)
