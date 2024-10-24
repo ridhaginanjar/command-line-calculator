@@ -49,3 +49,9 @@ class TestArithmetic(TestCase):
         result = subtraction(numbers)
         expected = -6
         self.assertEqual(result, expected)
+
+    def test_subtraction_negative_number(self):
+        numbers = [-6, -12]
+        result = subtraction(numbers)
+        expected = 6
+        self.assertEqual(result, expected)
