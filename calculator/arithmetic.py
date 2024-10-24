@@ -1,6 +1,18 @@
 def get_numbers():
-    numbers = input("Masukan angka dengan spasi sebagai pemisahnya (gunakan titik '.' jika ingin menggunakan decimal): ")
-    return [float(numbers) for numbers in numbers.split()]
+    numbers = input("MASUKAN ANGKA => Masukan angka dengan spasi sebagai pemisahnya (gunakan titik '.' jika ingin menggunakan decimal): ")
+
+    # Split and convert numbers into float
+    try:
+        number_list = [float(numbers) for numbers in numbers.split()]
+    except ValueError:
+        raise ValueError("Masukan angka dengan spasi sebagai pemisah dan gunakan '.' ketika menggunakan decimal")
+
+    # Handling input number less than one
+    if len(number_list) <= 1:
+        raise ValueError("Harap masukan Angka lebih dari satu!")
+
+    return number_list
+
 
 def addition(numbers):
     result = numbers[0]
